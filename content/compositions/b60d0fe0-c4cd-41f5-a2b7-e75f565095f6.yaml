@@ -1,0 +1,53 @@
+composition:
+  _name: Hero (Contentful)
+  _id: b60d0fe0-c4cd-41f5-a2b7-e75f565095f6
+  type: hero
+  parameters:
+    image:
+      type: image
+      value: ${#jptr:/Hero Content/fields/image}
+    title:
+      type: text
+      value: ${#jptr:/Hero Content/fields/title}
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h1
+    description:
+      type: text
+      value: ${#jptr:/Hero Content/fields/description}
+  _dataResources:
+    Hero Content:
+      type: contentfulHero
+      variables:
+        locale: en-US
+        entryIds: 3pGJKD9wi8RKPMTsvfIHgt
+        contentTypeId: contentBlock
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      image: 'yes'
+      title: 'yes'
+      video: 'yes'
+      objectFit: 'yes'
+      fullHeight: 'yes'
+      titleStyle: 'yes'
+      description: 'yes'
+      eyebrowText: 'yes'
+      overlayColor: 'yes'
+      group_content: 'yes'
+      overlayOpacity: 'yes'
+      group_primaryCta: 'yes'
+      primaryButtonCopy: 'yes'
+      primaryButtonLink: 'yes'
+      group_secondaryCta: 'yes'
+      primaryButtonStyle: 'yes'
+      group_imageSettings: 'yes'
+      secondaryButtonCopy: 'yes'
+      secondaryButtonLink: 'yes'
+      secondaryButtonStyle: 'yes'
+created: '2023-08-07T12:33:49.848097+00:00'
+modified: '2023-09-07T08:35:36.347645+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5

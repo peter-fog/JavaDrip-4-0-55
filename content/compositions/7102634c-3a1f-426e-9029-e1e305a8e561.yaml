@@ -1,0 +1,87 @@
+composition:
+  _name: Features (Algolia)
+  _id: 7102634c-3a1f-426e-9029-e1e305a8e561
+  type: grid
+  parameters:
+    gapX:
+      type: tp-slider-parameter
+      value: medium
+    gapY:
+      type: tp-slider-parameter
+      value: none
+    title:
+      type: text
+      value: Features
+    columnsCount:
+      type: tp-slider-parameter
+      value: '4'
+  slots:
+    grid-inner:
+      - _id: 0897e47b-024f-470c-b959-39da4dd7e2b3
+        type: $loop
+        slots:
+          body:
+            - _id: 8b05735f-2206-4fdb-8836-73a6a560a01c
+              type: card
+              variant: featured
+              parameters:
+                image:
+                  type: image
+                  value: ${#jptr:/Product Content features Loop Item/image}
+                title:
+                  type: text
+                  value: ${#jptr:/Product Content features Loop Item/title}
+                objectFit:
+                  type: select
+                  value: contain
+                textColor:
+                  type: select
+                  value: Light
+                description:
+                  type: text
+                  value: ${#jptr:/Product Content features Loop Item/description}
+                lineCountRestriction:
+                  type: tp-slider-parameter
+                  value: none
+              _overridability:
+                variants: true
+                parameters:
+                  badge: 'yes'
+                  image: 'yes'
+                  title: 'yes'
+                  badgeSize: 'yes'
+                  objectFit: 'yes'
+                  textColor: 'yes'
+                  badgeStyle: 'yes'
+                  buttonCopy: 'yes'
+                  buttonLink: 'yes'
+                  buttonStyle: 'yes'
+                  description: 'yes'
+                  overlayColor: 'yes'
+                  overlayOpacity: 'yes'
+                  lineCountRestriction: 'yes'
+        _dataResources:
+          Product Content features Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Product Content/results/0/features
+  _dataResources:
+    Product Content:
+      type: algoliaProduct
+      variables:
+        body: >-
+          {"requests":[{"indexName":"products-ngm","objectID":"espresso-gpt-145"}]}
+        entryIds: espresso-gpt-145
+        facetValue: ''
+      isPatternParameter: true
+      ignorePatternParameterDefault: false
+  _overridability:
+    parameters:
+      gapX: 'yes'
+      gapY: 'yes'
+      title: 'yes'
+      columnsCount: 'yes'
+created: '2023-09-07T07:32:13.221141+00:00'
+modified: '2023-09-07T07:37:54.607212+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

@@ -1,0 +1,54 @@
+id: contentfulTestimonial
+displayName: Testimonial
+ttl: 30
+path: /entries?${filters}
+custom:
+  include: 2
+  allowContentTypeIds:
+    - testimonial
+  enableFilterByLocale: false
+  enableAdvancedFilters: false
+method: GET
+purgeKey: 1fddf79b-a355-4b45-b639-46aaa84b619e
+archetype: singleEntry
+variables:
+  limit:
+    type: text
+    default: '5'
+    displayName: Limit
+  order:
+    type: text
+    default: ''
+    displayName: Order
+  locale:
+    type: text
+    default: ''
+    displayName: Locale
+  filters:
+    type: text
+    default: ''
+    displayName: Filters
+  keyword:
+    type: text
+    default: ''
+    displayName: Search Text
+  entryIds:
+    type: text
+    default: ''
+    displayName: Entry Ids
+  contentTypeId:
+    type: text
+    default: ''
+    displayName: Content Type
+parameters:
+  - key: include
+    value: '2'
+  - key: locale
+    value: ${locale}
+  - key: sys.id[in]
+    value: ${entryIds}
+longTermCache:
+  enabled: false
+  ttlInHours: 24
+dataSourceId: contentfulDataSource
+allowedOnComponents: []

@@ -1,0 +1,37 @@
+id: reviewsContentful
+displayName: Reviews
+ttl: 30
+path: /entries
+custom:
+  include: 2
+  searchField:
+    id: fields.productId
+    type: Symbol
+  allowContentTypeIds:
+    - testimonial
+  enableFilterByLocale: false
+  enableAdvancedFilters: false
+method: GET
+purgeKey: 296d15ba-2604-4866-b9f9-ccda1310005d
+archetype: multipleEntry
+variables:
+  locale:
+    type: text
+    default: ''
+    displayName: Locale
+  entryIds:
+    type: text
+    default: ''
+    displayName: Entry Ids
+parameters:
+  - key: include
+    value: '2'
+  - key: locale
+    value: ${locale}
+  - key: sys.id[in]
+    value: ${entryIds}
+longTermCache:
+  enabled: false
+  ttlInHours: 24
+dataSourceId: contentfulDataSource
+allowedOnComponents: []

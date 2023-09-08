@@ -1,0 +1,88 @@
+composition:
+  _name: Features (Contentful)
+  _id: 6de581e2-9bce-47e7-8ec8-18075bae863f
+  type: grid
+  parameters:
+    gapX:
+      type: tp-slider-parameter
+      value: medium
+    gapY:
+      type: tp-slider-parameter
+      value: none
+    title:
+      type: text
+      value: Features
+    columnsCount:
+      type: tp-slider-parameter
+      value: '4'
+  slots:
+    grid-inner:
+      - _id: 0897e47b-024f-470c-b959-39da4dd7e2b3
+        type: $loop
+        slots:
+          body:
+            - _id: 8b05735f-2206-4fdb-8836-73a6a560a01c
+              type: card
+              variant: featured
+              parameters:
+                image:
+                  type: image
+                  value: ${#jptr:/Features Content items Loop Item/fields/image}
+                title:
+                  type: text
+                  value: ${#jptr:/Features Content items Loop Item/fields/title}
+                objectFit:
+                  type: select
+                  value: contain
+                textColor:
+                  type: select
+                  value: Light
+                description:
+                  type: text
+                  value: >-
+                    ${#jptr:/Features Content items Loop
+                    Item/fields/description}
+                lineCountRestriction:
+                  type: tp-slider-parameter
+                  value: none
+              _overridability:
+                variants: true
+                parameters:
+                  badge: 'yes'
+                  image: 'yes'
+                  title: 'yes'
+                  badgeSize: 'yes'
+                  objectFit: 'yes'
+                  textColor: 'yes'
+                  badgeStyle: 'yes'
+                  buttonCopy: 'yes'
+                  buttonLink: 'yes'
+                  buttonStyle: 'yes'
+                  description: 'yes'
+                  overlayColor: 'yes'
+                  overlayOpacity: 'yes'
+                  lineCountRestriction: 'yes'
+        _dataResources:
+          Features Content items Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Features Content/items
+  _dataResources:
+    Features Content:
+      type: featuresContentful
+      variables:
+        locale: ''
+        entryIds: >-
+          3dpBIYZpgjtCq5jNHGfE1q,3tam4JjscHY7akgEKAJYrj,2dHv8ZH1BmsoJoGBOM8ujr,6RiGYP8IQvFYas40MEpiqi
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    parameters:
+      gapX: 'yes'
+      gapY: 'yes'
+      title: 'yes'
+      columnsCount: 'yes'
+created: '2023-09-07T07:27:50.986576+00:00'
+modified: '2023-09-07T07:28:43.333934+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5

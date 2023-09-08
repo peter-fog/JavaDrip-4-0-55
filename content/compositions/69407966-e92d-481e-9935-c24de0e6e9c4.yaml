@@ -1,0 +1,73 @@
+composition:
+  _name: Testimonial Hero (Contentful & Algolia)
+  _id: 69407966-e92d-481e-9935-c24de0e6e9c4
+  type: hero
+  variant: imageLeft
+  parameters:
+    image:
+      type: image
+      value: ${#jptr:/Product Content/results/0/images/0/url}
+    title:
+      type: text
+      value: ${#jptr:/Testimonial Content/fields/title}
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h1
+    description:
+      type: text
+      value: ${#jptr:/Testimonial Content/fields/experience}
+    eyebrowText:
+      type: text
+      value: ''
+    primaryButtonCopy:
+      type: text
+      value: Learn more
+    primaryButtonLink:
+      type: link
+      value:
+        path: /products/${#jptr:/Product Content/results/0/slug}
+        type: projectMapNode
+        nodeId: fb657541-0488-4c22-bce4-64c9cd71bdde
+        projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+        dynamicInputValues:
+          product-slug: ${#jptr:/Product Content/results/0/slug}
+  _dataResources:
+    Product Content:
+      type: algoliaProduct
+      variables:
+        body: >-
+          {"requests":[{"indexName":"products-ngm","objectID":"royale-iq-espresso-machine-117"}]}
+        entryIds: royale-iq-espresso-machine-117
+        facetValue: ''
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+    Testimonial Content:
+      type: contentfulTestimonial
+      variables:
+        locale: ''
+        entryIds: 7pvAZEvwfoEregIQuqlnzH
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      image: 'no'
+      title: 'no'
+      video: 'yes'
+      objectFit: 'yes'
+      fullHeight: 'yes'
+      titleStyle: 'yes'
+      description: 'no'
+      eyebrowText: 'yes'
+      overlayColor: 'yes'
+      overlayOpacity: 'yes'
+      primaryButtonCopy: 'yes'
+      primaryButtonLink: 'yes'
+      primaryButtonStyle: 'yes'
+      secondaryButtonCopy: 'yes'
+      secondaryButtonLink: 'yes'
+      secondaryButtonStyle: 'yes'
+created: '2023-08-15T10:42:17.103599+00:00'
+modified: '2023-09-07T08:35:49.114286+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5

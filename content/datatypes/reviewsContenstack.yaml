@@ -1,0 +1,40 @@
+id: reviewsContenstack
+displayName: Reviews
+ttl: 30
+path: /content_types/${content_type_uid}/entries?${include}
+custom:
+  include: 2
+  searchFieldIds:
+    - product_id
+  allowContentTypeUid: review
+  enableFilterByLocale: false
+method: GET
+purgeKey: 8e3004da-cbf9-40b4-8148-7b734424a613
+archetype: multipleEntry
+variables:
+  query:
+    type: text
+    default: '{ "uid": { "$in": [ "" ] } }'
+    displayName: Query
+  locale:
+    type: text
+    default: ''
+    displayName: Locale
+  include:
+    type: text
+    default: ''
+    displayName: Include
+  content_type_uid:
+    type: text
+    default: review
+    displayName: Entry Type
+parameters:
+  - key: query
+    value: ${query}
+  - key: locale
+    value: ${locale}
+longTermCache:
+  enabled: false
+  ttlInHours: 24
+dataSourceId: contentstackDataSource
+allowedOnComponents: []

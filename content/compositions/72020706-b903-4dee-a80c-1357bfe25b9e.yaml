@@ -1,0 +1,53 @@
+composition:
+  _name: Hero (Contentstack)
+  _id: 72020706-b903-4dee-a80c-1357bfe25b9e
+  type: hero
+  parameters:
+    image:
+      type: image
+      value: ${#jptr:/Hero Content/entry/image}
+    title:
+      type: text
+      value: ${#jptr:/Hero Content/entry/title}
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h1
+    description:
+      type: text
+      value: ${#jptr:/Hero Content/entry/description}
+  _dataResources:
+    Hero Content:
+      type: contentstackHero
+      variables:
+        query: ''
+        entry_uid: blt0443451b1f5b9d75
+        content_type_uid: content_block
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      image: 'yes'
+      title: 'yes'
+      video: 'yes'
+      objectFit: 'yes'
+      fullHeight: 'yes'
+      titleStyle: 'yes'
+      description: 'yes'
+      eyebrowText: 'yes'
+      overlayColor: 'yes'
+      group_content: 'yes'
+      overlayOpacity: 'yes'
+      group_primaryCta: 'yes'
+      primaryButtonCopy: 'yes'
+      primaryButtonLink: 'yes'
+      group_secondaryCta: 'yes'
+      primaryButtonStyle: 'yes'
+      group_imageSettings: 'yes'
+      secondaryButtonCopy: 'yes'
+      secondaryButtonLink: 'yes'
+      secondaryButtonStyle: 'yes'
+created: '2023-08-07T12:33:49.544152+00:00'
+modified: '2023-09-07T08:35:59.915805+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5

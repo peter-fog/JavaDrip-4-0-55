@@ -1,0 +1,326 @@
+composition:
+  _name: Promotion AI
+  _id: 81ef7427-8dd4-4c9f-96d0-f22c0ef60f16
+  _slug: promotion-ai
+  type: promotionPage
+  parameters:
+    pageTitle:
+      type: text
+      value: Promotion Page
+  slots:
+    pageFooter:
+      - _id: e8a882e7-ff02-46d9-81d5-0c4c63692bdb
+        type: footer
+        _pattern: 77213da4-3e05-4540-ba7b-9f6c040c2989
+    pageHeader:
+      - _id: 9933526b-ddf8-4686-a489-c2b503559d1f
+        type: header
+        _pattern: 540af74e-e65b-463e-a949-4e2fe22df873
+    pageContent:
+      - _id: 52ddb0ec-6129-4b6d-87db-0cdcce7ae044
+        type: $personalization
+        slots:
+          pz:
+            - _id: 2fe40c34-ef24-4b7c-b661-447a1345a622
+              type: couponHero
+              variant: backgroundDarkImage
+              parameters:
+                icon:
+                  type: cloudinary-image
+                  value:
+                    - alt: ''
+                      url: >-
+                        https://res.cloudinary.com/uniform-demos/image/upload/v1692269211/promotion/25_off_fsfpi4_uqznqb.svg
+                      uuid: 2cc4470e-5500-4eae-b8ef-8cb977b78527
+                      width: '113'
+                      format: svg
+                      height: '113'
+                      caption: ''
+                      version: 1692269211
+                      publicId: promotion/25_off_fsfpi4_uqznqb
+                      createdAt: '2023-08-17T10:46:51Z'
+                      previewUrl: >-
+                        https://res.cloudinary.com/uniform-demos/image/upload/q_auto,f_auto,w_150/promotion/25_off_fsfpi4_uqznqb.svg
+                      resourceType: image
+                      transformation: ''
+                image:
+                  type: cloudinary-image
+                  value:
+                    - alt: ''
+                      url: >-
+                        https://res.cloudinary.com/uniform-demos/image/upload/v1692269405/coffee-marketing/hero-1_vks69p_uywcq7_r0atem.png
+                      uuid: 979c2372-b3a3-491c-96f9-8730fc412bd1
+                      width: '2600'
+                      format: png
+                      height: '1300'
+                      caption: ''
+                      version: 1692269405
+                      publicId: coffee-marketing/hero-1_vks69p_uywcq7_r0atem
+                      createdAt: '2023-08-17T10:50:05Z'
+                      previewUrl: >-
+                        https://res.cloudinary.com/uniform-demos/image/upload/q_auto,f_auto,w_150/coffee-marketing/hero-1_vks69p_uywcq7_r0atem.png
+                      resourceType: image
+                      transformation: ''
+                title:
+                  type: text
+                  value: International Bean bundle for 25% off!
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    op: '|'
+                    crit:
+                      - l: vips
+                        r: 0
+                        op: '>'
+                      - l: consideringPurchase
+                        r: 0
+                        op: '>'
+                    name: 25% off
+                objectFit:
+                  type: select
+                  value: cover
+                couponCode:
+                  type: text
+                  value: 25-off-2023
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h1
+                description:
+                  type: ai-generated-text
+                  value: >-
+                    Congratulations on the International Bean bundle 25% off
+                    offer for VIPs or those considering purchase! We hope you
+                    make the most of this great offer and enjoy your purchase.
+                overlayColor:
+                  type: tp-color-style-parameter
+                  value: base-300
+                overlayOpacity:
+                  type: tp-slider-parameter
+                  value: 50%
+            - _id: ba9e453c-6bc1-4801-bdeb-5ef132b7bab0
+              type: container
+              slots:
+                container-inner:
+                  - _id: 6831d738-564d-4380-ae99-5c21dd8a7c0f
+                    type: grid
+                    slots:
+                      grid-inner:
+                        - _id: f14b89de-66d0-464a-b54e-b88539326ecd
+                          type: gridItem
+                          slots:
+                            inner:
+                              - _id: 5315db99-44b2-4def-9f62-7bc8e534d07c
+                                type: callToAction
+                                parameters:
+                                  title:
+                                    type: text
+                                    value: Try our International Beans
+                                  titleStyle:
+                                    type: tp-title-style-parameter
+                                    value: h1
+                                  description:
+                                    type: text
+                                    value: Sign up and get 25% off taster bundle
+                          parameters:
+                            title:
+                              type: text
+                              value: Left Section
+                            rowSpan:
+                              type: tp-slider-parameter
+                              value: '1'
+                            rowStart:
+                              type: tp-slider-parameter
+                              value: None
+                            columnSpan:
+                              type: tp-slider-parameter
+                              value: '2'
+                            columnStart:
+                              type: tp-slider-parameter
+                              value: none
+                        - _id: c7a97be3-b020-4858-85cc-9f893eb2b354
+                          type: gridItem
+                          slots:
+                            inner:
+                              - _id: 07006582-3deb-4d8c-9ff0-299b0358f828
+                                type: emailSignupForm
+                                parameters:
+                                  image:
+                                    type: cloudinary-image
+                                    value:
+                                      - alt: ''
+                                        url: >-
+                                          https://res.cloudinary.com/uniform-demos/image/upload/v1692267231/coffee-marketing/hero-2_gjqbfo_arfttn.webp
+                                        uuid: 9873a708-35ad-40f5-8707-ee574de384fa
+                                        width: '2600'
+                                        format: webp
+                                        height: '1300'
+                                        caption: ''
+                                        version: 1692267231
+                                        publicId: coffee-marketing/hero-2_gjqbfo_arfttn
+                                        createdAt: '2023-08-17T10:13:51Z'
+                                        previewUrl: >-
+                                          https://res.cloudinary.com/uniform-demos/image/upload/q_auto,f_auto,w_150/coffee-marketing/hero-2_gjqbfo_arfttn.webp
+                                        resourceType: image
+                                        transformation: ''
+                                  title:
+                                    type: ai-generated-text
+                                    value: >-
+                                      JavaDrip: Get Your Coffee Fix with Special
+                                      Promotions!
+                                  objectFit:
+                                    type: select
+                                    value: cover
+                                  buttonCopy:
+                                    type: text
+                                    value: Sign up
+                                  buttonLink:
+                                    type: link
+                                    value:
+                                      path: /promotion-ai?registered=true
+                                      type: url
+                                  titleStyle:
+                                    type: tp-title-style-parameter
+                                    value: h1
+                                  buttonStyle:
+                                    type: tp-button-style-parameter
+                                    value: secondary
+                                  description:
+                                    type: ai-generated-text
+                                    value: >-
+                                      Don't miss out! Enter your email now and
+                                      get an exclusive discount coupon!
+                                  overlayColor:
+                                    type: tp-color-style-parameter
+                                    value: base-300
+                                  overlayOpacity:
+                                    type: tp-slider-parameter
+                                    value: 60%
+                          parameters:
+                            title:
+                              type: text
+                              value: Right Section
+                            rowSpan:
+                              type: tp-slider-parameter
+                              value: '1'
+                            rowStart:
+                              type: tp-slider-parameter
+                              value: None
+                            columnSpan:
+                              type: tp-slider-parameter
+                              value: '4'
+                            columnStart:
+                              type: tp-slider-parameter
+                              value: none
+                    parameters:
+                      gapX:
+                        type: tp-slider-parameter
+                        value: none
+                      gapY:
+                        type: tp-slider-parameter
+                        value: none
+                      title:
+                        type: text
+                        value: Promotion Grid
+                      columnsCount:
+                        type: tp-slider-parameter
+                        value: '6'
+              parameters:
+                title:
+                  type: text
+                  value: Promotion Container
+                marginTop:
+                  type: select
+                  value: None
+                paddingTop:
+                  type: select
+                  value: Small
+                marginBottom:
+                  type: select
+                  value: None
+                paddingBottom:
+                  type: select
+                  value: None
+        parameters:
+          count:
+            type: number
+            value: '1'
+          trackingEventName:
+            type: text
+            value: CTA
+      - _id: d6a6aed0-5022-4917-b3e9-b6f4be0516d5
+        type: breadcrumbs
+        parameters:
+          separator:
+            type: select
+            value: chevron
+          colorStyle:
+            type: tp-color-style-parameter
+            value: primary
+          displayRootNode:
+            type: checkbox
+            value: true
+          displayPlaceholderNodes:
+            type: checkbox
+            value: true
+      - _id: 83846b54-3a14-4ec9-8c7d-db1858656ef0
+        type: cardBlock
+        _pattern: 38b7dc2d-ffd4-4d45-8452-ef766cc9bd1f
+        _dataResources:
+          Products Query Content:
+            type: algoliaProductsQuery
+            variables:
+              body: >-
+                {"facetFilters":"rootCategories:Coffee
+                Makers","query":"","hitsPerPage":"10"}
+              path: /products-ngm/query
+              limit: '10'
+              keyword: ''
+              facetValue: Coffee Makers
+      - _id: 18bd463a-5b74-4639-be15-ff48e55e4b9d
+        type: spacer
+        parameters:
+          thickness:
+            type: tp-slider-parameter
+            value: 10px
+  _overrides:
+    83846b54-3a14-4ec9-8c7d-db1858656ef0:
+      parameters:
+        title:
+          type: text
+          value: Featured Products
+        buttonCopy:
+          type: text
+          value: See More
+        buttonLink:
+          type: link
+          value:
+            path: /coffee-makers
+            type: projectMapNode
+            nodeId: ea684346-109c-4b11-82a5-2a982d2dd795
+            projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+        buttonStyle:
+          type: tp-button-style-parameter
+          value: secondary
+        description:
+          type: text
+          value: International Taster
+    83846b54-3a14-4ec9-8c7d-db1858656ef0|98ef4404-7adc-4d1b-bd62-e17bc229352b:
+      parameters:
+        textColor:
+          type: select
+          value: Light
+        buttonLink:
+          type: link
+          value:
+            path: /products/:product-slug
+            type: projectMapNode
+            nodeId: fb657541-0488-4c22-bce4-64c9cd71bdde
+            projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+            dynamicInputValues:
+              product-slug: ${#jptr:/Product Content results Loop Item/slug}
+        buttonStyle:
+          type: tp-button-style-parameter
+          value: secondary
+created: '2023-09-06T15:32:51.127024+00:00'
+modified: '2023-09-07T08:34:06.813116+00:00'
+pattern: false

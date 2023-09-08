@@ -1,0 +1,79 @@
+composition:
+  _name: Reviews (Contentstack)
+  _id: 9d0e51f4-0b1f-43e4-b3ba-6b8d25e9b880
+  type: grid
+  parameters:
+    gapX:
+      type: tp-slider-parameter
+      value: medium
+    gapY:
+      type: tp-slider-parameter
+      value: none
+    title:
+      type: text
+      value: Reviews
+    columnsCount:
+      type: tp-slider-parameter
+      value: '2'
+  slots:
+    grid-inner:
+      - _id: 46df9f2d-a2b9-4011-b16a-6ed4a83b214b
+        type: $loop
+        slots:
+          body:
+            - _id: 4aeee2e3-e311-4d19-a047-1c3a7e68d443
+              type: review
+              parameters:
+                date:
+                  type: text
+                  value: ${#jptr:/Reviews Content entries Loop Item/date}
+                stars:
+                  type: tp-slider-parameter
+                  value: '5'
+                personName:
+                  type: text
+                  value: ${#jptr:/Reviews Content entries Loop Item/author_name}
+                description:
+                  type: text
+                  value: ${#jptr:/Reviews Content entries Loop Item/description}
+                lineCountRestriction:
+                  type: tp-slider-parameter
+                  value: none
+              _overridability:
+                variants: true
+                parameters:
+                  date: 'yes'
+                  stars: 'yes'
+                  title: 'yes'
+                  picture: 'yes'
+                  personName: 'yes'
+                  starsColor: 'yes'
+                  description: 'yes'
+                  showReviewLabel: 'yes'
+                  lineCountRestriction: 'yes'
+        _dataResources:
+          Reviews Content entries Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Reviews Content/entries
+  _dataResources:
+    Reviews Content:
+      type: reviewsContenstack
+      variables:
+        query: '{ "uid": { "$in": ["blt96e636a005829818","blt33ea66e43e317816"] } }'
+        locale: ''
+        include: ''
+        entryUids: blt96e636a005829818,blt33ea66e43e317816
+        content_type_uid: review
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    parameters:
+      gapX: 'yes'
+      gapY: 'yes'
+      title: 'yes'
+      columnsCount: 'yes'
+created: '2023-09-07T07:43:12.075331+00:00'
+modified: '2023-09-07T07:49:36.643423+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

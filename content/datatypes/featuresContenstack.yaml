@@ -1,0 +1,42 @@
+id: featuresContenstack
+displayName: Features
+ttl: 30
+path: /content_types/${content_type_uid}/entries?${include}
+custom:
+  include: 2
+  imagePath: image
+  customQuery: '{"tags": "feature"}'
+  searchFieldIds:
+    - title
+  allowContentTypeUid: content_block
+  enableFilterByLocale: false
+method: GET
+purgeKey: 19304895-84d5-4e24-acef-e4b85f32d527
+archetype: multipleEntry
+variables:
+  query:
+    type: text
+    default: '{ "uid": { "$in": [ "" ] } }'
+    displayName: Query
+  locale:
+    type: text
+    default: ''
+    displayName: Locale
+  include:
+    type: text
+    default: ''
+    displayName: Include
+  content_type_uid:
+    type: text
+    default: content_block
+    displayName: Entry Type
+parameters:
+  - key: query
+    value: ${query}
+  - key: locale
+    value: ${locale}
+longTermCache:
+  enabled: false
+  ttlInHours: 24
+dataSourceId: contentstackDataSource
+allowedOnComponents: []

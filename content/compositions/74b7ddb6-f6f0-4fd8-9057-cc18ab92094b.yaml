@@ -1,0 +1,43 @@
+composition:
+  _name: Call to Action (Contentful)
+  _id: 74b7ddb6-f6f0-4fd8-9057-cc18ab92094b
+  type: callToAction
+  parameters:
+    title:
+      type: text
+      value: ${#jptr:/Call to Action Content/fields/title}
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h1
+    description:
+      type: text
+      value: ${#jptr:/Call to Action Content/fields/description}
+  _dataResources:
+    Call to Action Content:
+      type: contentfulCallToAction
+      variables:
+        locale: en-US
+        entryIds: 4Ahfo3Z8XXPN22mpUeFOlJ
+        contentTypeId: contentBlock
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      title: 'yes'
+      titleStyle: 'yes'
+      description: 'yes'
+      eyebrowText: 'yes'
+      group_content: 'yes'
+      group_primaryCta: 'yes'
+      primaryButtonCopy: 'yes'
+      primaryButtonLink: 'yes'
+      group_secondaryCta: 'yes'
+      primaryButtonStyle: 'yes'
+      secondaryButtonCopy: 'yes'
+      secondaryButtonLink: 'yes'
+      secondaryButtonStyle: 'yes'
+created: '2023-08-07T12:33:51.442697+00:00'
+modified: '2023-08-17T19:18:41.594159+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5
