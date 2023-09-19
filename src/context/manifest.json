@@ -2,6 +2,16 @@
   "project": {
     "pz": {
       "agg": {
+        "consideringCoffeeMaker": {
+          "inputs": [
+            {
+              "dim": "coffeeMakersInterest"
+            },
+            {
+              "dim": "registeredForNewsletter"
+            }
+          ]
+        },
         "consideringPurchase": {
           "inputs": [
             {
@@ -111,9 +121,31 @@
               }
             ]
           }
+        },
+        "specialtyLaunchResponse": {
+          "str": 50,
+          "cap": 100,
+          "dur": "p",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "type": "QS",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "specialtylaunch"
+                },
+                "queryName": "utm_campaign"
+              }
+            ]
+          }
         }
       }
     },
-    "test": {}
+    "test": {
+      "test": {}
+    }
   }
 }
