@@ -22,7 +22,6 @@ export type Props = ComponentProps<{
   secondaryButtonCopy: string;
   secondaryButtonLink: Types.ProjectMapLink;
   secondaryButtonStyle: Types.ButtonStyles;
-  textColor?: Types.AvailableTextColor;
 }>;
 
 export enum CallToActionVariant {
@@ -61,22 +60,15 @@ const CallToAction: FC<Props> = ({
   secondaryButtonCopy,
   secondaryButtonLink,
   secondaryButtonStyle,
-  textColor,
   component: { variant } = {},
 }) => {
   const { isContextualEditing } = useUniformCurrentComposition();
   const { secondaryFont } = useComponentStarterKitContext();
-
-  const isLightTextColor = textColor === 'Light';
-  const eyebrowTextColorStyle = isLightTextColor ? 'text-secondary' : 'text-primary';
-  const textColorStyle = isLightTextColor ? 'text-primary-content' : 'text-secondary-content';
-
   return (
     <div
       className={classNames(
-        'flex flex-wrap items-center justify-between w-full lg:flex-nowrap rounded-xl',
-        secondaryFont?.className,
-        textColorStyle
+        'flex flex-wrap items-center justify-between w-full lg:flex-nowrap rounded-xl text-secondary-content',
+        secondaryFont?.className
       )}
     >
       <div className={classNames('flex', getCallToActionContentClass(variant))}>
@@ -85,10 +77,7 @@ const CallToAction: FC<Props> = ({
             placeholder="Eyebrow text goes here"
             parameterId="eyebrowText"
             as="div"
-            className={classNames(
-              'text-sm font-bold tracking-wider uppercase text-primary my-3',
-              eyebrowTextColorStyle
-            )}
+            className="text-sm font-bold tracking-wider uppercase text-primary my-3"
           />
           <UniformText
             placeholder="Title goes here"

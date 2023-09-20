@@ -88,8 +88,24 @@ parameters:
     type: tp-button-style-parameter
     helpText: ''
     typeConfig: null
+  - id: group_presentationSettings
+    name: Presentation Settings
+    type: group
+    typeConfig:
+      collapsed: true
+      childrenParams:
+        - textColor
+  - id: textColor
+    name: Text Color
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Dark
+          value: Dark
+        - text: Light
+          value: Light
 categoryId: ea001653-1f96-4f07-9187-a1626a4965e5
-description: ''
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Call_to_Action_preview_image
 useTeamPermissions: true
@@ -97,7 +113,7 @@ slots: []
 titleParameter: title
 canBeComposition: false
 created: '2023-08-28T12:30:17.365646+00:00'
-updated: '2023-08-28T12:30:17.365646+00:00'
+updated: '2023-09-19T09:54:27.799976+00:00'
 variants:
   - id: alignLeft
     name: Align Left
