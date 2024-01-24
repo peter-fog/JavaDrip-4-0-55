@@ -28,3 +28,6 @@ npm-debug.log*
 dist
 
 storybook-static
+
+# Edgio generated build directory
+.edgio

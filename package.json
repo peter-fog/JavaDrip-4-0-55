@@ -1,14 +1,8 @@
 {
-  "name": "commerce-algolia",
-  "version": "4.0.55",
-  "private": true,
-  "engines": {
-    "npm": ">=8.19.0",
-    "node": ">=18.12.0",
-    "yarn": "please-use-npm",
-    "pnpm": "please-use-npm"
-  },
   "scripts": {
+    "edgio:dev": "edgio dev",
+    "edgio:build": "edgio build",
+    "edgio:deploy": "edgio deploy",
     "dev": "run-s uniform:pull:manifest dev:next",
     "dev:next": "next dev --port 3000",
     "build": "run-s uniform:pull:manifest build:next",
@@ -53,6 +47,15 @@
     "postinstall": "cd cli-run && npm install && npm run build",
     "cli": "cd cli-run && node dist/index.mjs"
   },
+  "name": "commerce-algolia",
+  "version": "4.0.55",
+  "private": true,
+  "engines": {
+    "npm": ">=8.19.0",
+    "node": ">=18.12.0",
+    "yarn": "please-use-npm",
+    "pnpm": "please-use-npm"
+  },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.1.0",
     "@contentful/rich-text-types": "^16.2.0",
@@ -88,6 +91,10 @@
   },
   "devDependencies": {
     "@algolia/recommend": "4.18.0",
+    "@edgio/cli": "^7.7.3",
+    "@edgio/core": "^7.7.3",
+    "@edgio/next": "^7.7.3",
+    "@edgio/prefetch": "^7.7.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/color": "^3.0.3",
     "@types/lodash.debounce": "^4.0.7",
